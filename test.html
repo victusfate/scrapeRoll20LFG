@@ -1,0 +1,1662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"50a61d60f7","applicationID":"1985886","transactionName":"cl0MRkRXVFxdFBZqW19TFkBXF3wCCEl+fGYRVA1AQ1UXU1kSXF5dQ0tNCFVZTFlc","queueTime":0,"applicationTime":1098,"ttGuid":"","agentToken":null,"agent":""}</script>
+<script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1059.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+	
+	<title>Community Forums: Looking for Group | Roll20: Online virtual tabletop</title>
+	
+
+	
+
+	<link rel="stylesheet" href="/assets/v2.css?1507493994" type="text/css" />
+	<link rel="stylesheet" href="/v2/css/browse.css?1506440799" type="text/css" />
+	<link rel="stylesheet" href="/v2/css/nightmode.css" type="text/css" />
+
+	<script type="text/javascript" src="/assets/v2.js?1506440799"></script>
+	<script type="text/javascript" src="/v2/js/browse.js?1452029248"></script>
+
+	
+
+	<script type="text/javascript">
+		$(function() { $.jqotetag( '$' ); });
+	</script>
+
+	<meta name="viewport" content="width=768" />
+
+</head>
+
+<body>
+
+	<div class="container topbar">
+
+	
+
+	
+
+	<div class="row" style="background-color: white; position: relative; z-index: 10000; padding-top: 20px; padding-bottom: 10px; margin-right: 0px;">
+
+		<div class="col-md-8 logo" style="width: 275px;">
+			<a href="https://roll20.net/">
+			<img src="https://app.roll20.net/v2/images/roll20-logo.png" alt="Roll20 logo" class="withoutad" />
+			</a>
+		</div>
+	</div>
+
+	<div class="row mobilemenu">
+
+		<div class="col-md-12 btn-row">
+
+			<div class="menu-hider"></div>
+
+			<div class="btn-group">
+				<a class="menutoggler btn btn-default" href="#" class="btn btn-default" role="button">Menu<span class="caret"></span></a>
+
+				<div class="fullmobilemenu">
+
+					<ul class="nav nav-pills nav-stacked">
+
+						<li><a href="https://roll20.net/">Home</a></li>
+						<li><a href="https://app.roll20.net/campaigns/search">My Games</a></li>
+						<li><a href="https://app.roll20.net/lfg">Join a Game</a></li>
+						<li><a href="https://marketplace.roll20.net/">Marketplace</a></li>
+						<li><a href="https://roll20.net/compendium">Compendium</a></li>
+						<li><a href="https://app.roll20.net/forum">Forums</a></li>
+						<li><a href="https://wiki.roll20.net/">Wiki</a></li>
+						<li><a href="http://blog.roll20.net">Blog</a></li>
+
+					</ul>
+
+				</div>
+
+			</div>
+
+			<div class="simplecontainer right topbarlogin">
+				<!-- Filled in by AJAX JS -->
+			</div>		
+
+			<div class="simplecontainer right topbarnotifications">
+				<!-- This is filled in by AJAX JS -->
+			</div>
+		</div>
+	</div>
+
+	<div class="row desktopmenu">
+
+		<div class="col-md-12 btn-row">
+
+			<div class="menu-hider"></div>
+
+			
+				<div class="btn-group">
+					<a href="https://app.roll20.net/" class="btn btn-default" role="button">Play Now</a>
+				</div>
+				<div class="btn-group">
+					<a href="https://app.roll20.net/lfg" class="btn btn-default" role="button">Join a Game</a>
+				</div>
+			
+
+			
+				<div class="btn-group">
+					<a href="https://marketplace.roll20.net/" class="btn btn-default" role="button">Marketplace</a>
+				</div>
+			
+
+			<div class="btn-group drop">
+				<a href="https://roll20.net/compendium/" class="btn btn-default" role="button" data-toggle="dropdown" data-hover="dropdown" aria-expanded="false">Tools</a>
+				<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" aria-expanded="false" id="digitaltools">
+					<span class="caret"></span>
+					<span class="sr-only">Toggle Dropdown</span>
+				</button>
+			</div>
+			<div class="full" role="menu" aria-labelledby="digitaltools">
+				<div class="menu">
+					<!-- <a href="https://app.roll20.net/digitaltools/">Tools</a> -->
+					<a href="https://roll20.net/compendium/">Compendium</a>
+					<a href="https://app.roll20.net/vault/">Character Vault</a>
+					<a href="https://wiki.roll20.net/Roll20_for_iPad_and_Android">Roll20 for iPad and Android</a>
+				</div>
+				<div class="listing">
+					<div class="imgcontainer">
+						<a href="https://app.roll20.net/vault/">
+							<img src="/images/CharacterVault.png">
+						</a>
+					</div>
+					<div class="gameinfo">
+						<a href="https://app.roll20.net/vault/">Character Vault</a>
+						<div class="shorthr"></div>
+						<span class="gameinfo">Any Concept / Any System</span>
+					</div>
+				</div>
+				<div class="listing">
+					<div class="imgcontainer">
+						<a href="https://roll20.net/compendium/">
+							<img src="/images/Compendium.png">
+						</a>
+					</div>
+					<div class="gameinfo">
+						<a href="https://roll20.net/compendium/">Compendium</a>
+						<div class="shorthr"></div>
+						<span class="gameinfo">Your System Come To Life</span>
+					</div>
+				</div>
+				<div class="listing">
+					<div class="imgcontainer">
+						<a href="https://play.google.com/store/apps/details?id=net.roll20.playerappandroid&hl=en">
+							<img src="/images/forAndroid.png">
+						</a>
+					</div>
+					<div class="gameinfo">
+						<a href="https://play.google.com/store/apps/details?id=net.roll20.playerappandroid&hl=en">Roll20 for Android</a>
+						<div class="shorthr"></div>
+						<span class="gameinfo">Streamlined for your Tablet</span>
+					</div>
+				</div>
+				<div class="listing">
+					<div class="imgcontainer">
+						<a href="https://itunes.apple.com/us/app/roll20-for-ipad/id944989026?mt=8">
+							<img src="/images/foriPad.png">
+						</a>
+					</div>
+					<div class="gameinfo">
+						<a href="https://itunes.apple.com/us/app/roll20-for-ipad/id944989026?mt=8">Roll20 for iPad</a>
+						<div class="shorthr"></div>
+						<span class="gameinfo">Streamlined for your Tablet</span>
+					</div>
+				</div>
+			</div>
+
+			
+			
+			<div class="btn-group drop">
+				<a href="https://app.roll20.net/forum/" class="btn btn-default community-toggler" role="button" data-toggle="dropdown" data-hover="dropdown" aria-expanded="false">Community</a>
+				<button type="button" class="btn btn-default dropdown-toggle community community-toggler" data-toggle="dropdown" data-hover="dropdown" aria-expanded="false" id="community">
+					<span class="caret"></span>
+					<span class="sr-only">Toggle Dropdown</span>
+				</button>
+			</div>
+			<div class="full community" role="menu" area-lavelledby="games">
+				<div class="menu">
+					<a href="https://app.roll20.net/forum/">Forums</a>
+					<a href="https://wiki.roll20.net/Main_Page">Help Wiki</a>
+					<a href="http://blog.roll20.net/">Blog</a>
+					<a href="http://www.twitch.tv/roll20app">Live Stream</a>
+					<a href="https://www.youtube.com/user/MsRoll20">VODs</a>
+				</div>
+				
+				<div class="listing">
+					<div class="imgcontainer">
+						<a href="https://youtu.be/z2WlO_W8kxs"><img src="https://s3.amazonaws.com/files.d20.io/images/29861949/LFe4rxMMMT4vriCcg7lauA/original.png?1488965443989" /></a>
+					</div>
+					<p class="snippet"><a href="https://youtu.be/z2WlO_W8kxs">[YouTube] Roll20 Presents: Burning Wheel Series 3</a></p>
+				</div>
+				
+				<div class="listing">
+					<div class="imgcontainer">
+						<a href="https://www.twitch.tv/dnd"><img src="https://s3.amazonaws.com/files.d20.io/images/38822157/__M8exgNMHVCmpFeQFji1Q/original.png?1504896244917" /></a>
+					</div>
+					<p class="snippet"><a href="https://www.twitch.tv/dnd">[Twitch] Roll20 Presents: Tomb of Annihilation - Live Fridays at 2pm PT</a></p>
+				</div>
+				
+				<div class="listing">
+					<div class="imgcontainer">
+						<a href="https://wiki.roll20.net/Main_Page"><img src="https://s3.amazonaws.com/files.d20.io/images/29861939/iLkcbzqkfXTGs8mb-B2ZZw/original.png?1488965391669" /></a>
+					</div>
+					<p class="snippet"><a href="https://wiki.roll20.net/Main_Page">[Wiki] Tips, Tricks, & Guides for Roll20</a></p>
+				</div>
+				
+				<div class="listing">
+					<div class="imgcontainer">
+						<a href="http://blog.roll20.net/post/165108311490/tomb-of-annihilation-is-available-now"><img src="https://s3.amazonaws.com/files.d20.io/images/38823786/6CZC8g9YAVCqQvA_5H-Ieg/original.png?1504898491826" /></a>
+					</div>
+					<p class="snippet"><a href="http://blog.roll20.net/post/165108311490/tomb-of-annihilation-is-available-now">[Blog] Enter the Tomb of Annihilation! Available Now!</a></p>
+				</div>
+				
+			</div>
+
+			
+
+			<!--<div class="simplecontainer">
+				<div class="btn-group help">
+					<button type="button" class="btn btn-default dropdown-toggle help" data-toggle="dropdown" aria-expanded="false" id="help">
+						<span class="pictos">?</span>
+					</button>
+				</div>
+				<div class="simple" role="menu" aria-labelledby="help">
+					
+					<hr>
+					<a href="https://app.roll20.net/faq/">Need Help?</a>
+				</div>
+			</div>-->
+
+			<div class="simplecontainer right topbarlogin">
+				<!-- Filled in by AJAX JS -->
+			</div>		
+
+			<div class="simplecontainer right topbarnotifications">
+				<!-- This is filled in by AJAX JS -->
+			</div>
+		</div>
+
+	</div>
+
+</div>
+
+<script type="text/javascript">
+
+$(".signin input").click(function() {
+		return false;
+});
+
+$("body, .simplecontainer").on("click", ".full, .simplecontainer .simple", function(e) {
+	e.stopPropagation();
+});	
+
+$(".menutoggler").on("click", function() {
+	$(".mobilemenu").addClass("open");
+	return false;
+});
+
+$(document).on("click", function() {
+	$(".mobilemenu").removeClass("open");
+})
+
+if('ontouchstart' in document) {
+	//touch-compatible
+}
+else {
+	//mouse-compatible
+	$(".topbar .btn-group a.btn[data-toggle=dropdown]").removeAttr("data-toggle");
+	$('[data-hover="dropdown"]').dropdownHover({hoverDelay: 100, delay: 300});
+}
+
+var trackOutboundLink = function(url) {
+   ga('send', 'event', 'outbound', 'obsAdvert', '', {
+     'transport': 'beacon',
+     'hitCallback': function(){document.location = url;}
+   });
+}
+$(function() {  
+	setTimeout(function(){
+		if($(".obs_container").length > 0) {
+			// GA Event Tracking
+			ga('send', {
+				'hitType': 'event',
+				'eventCategory': 'obsAdvert',
+				'eventAction': 'topbar',
+				'eventLabel': ''
+			});
+		}
+	}, 0)
+});
+
+
+</script>
+
+	<div class="container">
+
+		<div class='row forum categoryhome'>
+  <div class='col-md-12' id='categorylisting'>
+    <div class='pull-right' style='position: relative; top: 3px; margin-top: 10px; margin-right: 10px; padding-top: 10px; font-size: .8em;' title="You can use advanced searching paramaters like AND, OR, and NOT. '(Dungeon AND World) NOT Dragons'">
+      <div class='forumsearch tipme' style='display: inline-block; margin-right: 20px;' title="You can use advanced searching paramaters like AND, OR, and NOT. '(Dungeon AND World) NOT Dragons'">
+        Search Looking for Group
+        <input placeholder='Enter keyword and press return...' type='text'>
+      </div>
+    </div>
+    <h1 style='padding-left: 2px; margin-top: 15px;'>Looking for Group</h1>
+    <ol class='breadcrumb' style='margin-left: 10px; border: none; border-bottom: 1px solid #d1d1d1; border-radius: 0; float: left; padding: 0;'>
+      <li>
+        <a href='/forum'>Community Forums</a>
+      </li>
+      <li style='position: relative;'>
+        Looking for Group
+        <a data-toggle='dropdown'>
+          <span class='caret'></span>
+        </a>
+        <ul class='dropdown-menu'>
+          <li>
+            <a href='/forum/category/1434153'>Announcements</a>
+          </li>
+          <li>
+            <a href='/forum/category/19'>Specific Use Questions & Macros</a>
+          </li>
+          <li>
+            <a href='/forum/category/277980'>Character Sheets & Compendium</a>
+          </li>
+          <li>
+            <a href='/forum/category/46806'>API</a>
+          </li>
+          <li>
+            <a href='/forum/category/1434154'>Roll20 Marketplace & Creative Content</a>
+          </li>
+          <li>
+            <a href='/forum/category/22'>Looking for Group</a>
+          </li>
+          <li>
+            <a href='/forum/category/18'>Bug Reports & Technical Issues</a>
+          </li>
+          <li>
+            <a href='/forum/category/385189'>Suggestions & Ideas</a>
+          </li>
+        </ul>
+      </li>
+    </ol>
+    <div style='clear: left;'></div>
+    <div class='postlistings'>
+      <div class="postlisting stickypost" data-postid="3735894">
+      <div class='pictos stickyicon'>^</div>
+      <ul class='infoboxes'>
+        <li>
+          0 <span class='pictos'>q</span>
+        </li>
+        <li>
+          20126 <span class='pictos'>E</span>
+        </li>
+      </ul>
+      <div class='title'>
+        <a href='/forum/post/3735894/code-of-conduct-paid-gming'>[Code of Conduct] Paid GMing</a>
+        <div class='label' style='display: inline-block; position: relative; top: -2px; color: #777'>
+          <span class='pictos'>(</span>
+        </div>
+      </div>
+      <div class='meta'>
+        Last Post
+        <div class='timestamp' style='display:inline;'>1469578455</div>
+        by Avacyn
+        <strong class='devposttag'>Dev Response</strong>
+      </div>
+      <div class='clear'></div>
+      </div>
+      <div class="postlisting stickypost" data-postid="2086083">
+      <div class='pictos stickyicon'>^</div>
+      <ul class='infoboxes'>
+        <li>
+          0 <span class='pictos'>q</span>
+        </li>
+        <li>
+          28441 <span class='pictos'>E</span>
+        </li>
+      </ul>
+      <div class='title'>
+        <a href='/forum/post/2086083/posting-to-lfg-read-first'>Posting to LFG: Read First</a>
+        <div class='label' style='display: inline-block; position: relative; top: -2px; color: #777'>
+          <span class='pictos'>(</span>
+        </div>
+      </div>
+      <div class='meta'>
+        Last Post
+        <div class='timestamp' style='display:inline;'>1434585996</div>
+        by Avacyn
+        <strong class='devposttag'>Dev Response</strong>
+      </div>
+      <div class='clear'></div>
+      </div>
+      <div class="postlisting" data-postid="5627414">
+      <ul class='infoboxes'>
+        <li>
+          0 <span class='pictos'>q</span>
+        </li>
+        <li>
+          6 <span class='pictos'>E</span>
+        </li>
+      </ul>
+      <div class='title'>
+        <a href='/forum/post/5627414/looking-for-players'>Looking for players</a>
+      </div>
+      <div class='meta'>
+        Last Post
+        <div class='timestamp' style='display:inline;'>1507596957</div>
+        by hiismyname h.
+      </div>
+      <div class='clear'></div>
+      </div>
+      <div class="postlisting" data-postid="5484213">
+      <ul class='infoboxes'>
+        <li>
+          2 <span class='pictos'>q</span>
+        </li>
+        <li>
+          71 <span class='pictos'>E</span>
+        </li>
+      </ul>
+      <div class='title'>
+        <a href='/forum/post/5484213/gurps-saturdays-at-6pm-central'>GURPS Saturdays @ 6PM Central</a>
+      </div>
+      <div class='meta'>
+        Last Post
+        <div class='timestamp' style='display:inline;'>1507595994</div>
+        by Gregory B.
+      </div>
+      <div class='clear'></div>
+      </div>
+      <div class="postlisting" data-postid="5534159">
+      <ul class='infoboxes'>
+        <li>
+          9 <span class='pictos'>q</span>
+        </li>
+        <li>
+          374 <span class='pictos'>E</span>
+        </li>
+      </ul>
+      <div class='title'>
+        <a href='/forum/post/5534159/starfinder-gm-looking-for-players'>Starfinder GM looking for players</a>
+      </div>
+      <div class='meta'>
+        Last Post
+        <div class='timestamp' style='display:inline;'>1507595333</div>
+        by Mr. Snuffles
+      </div>
+      <div class='clear'></div>
+      </div>
+      <div class="postlisting" data-postid="5624124">
+      <ul class='infoboxes'>
+        <li>
+          2 <span class='pictos'>q</span>
+        </li>
+        <li>
+          96 <span class='pictos'>E</span>
+        </li>
+      </ul>
+      <div class='title'>
+        <a href='/forum/post/5624124/lfp-superhero-rpg-rules-slash-system-light'>LFP Superhero RPG Rules/System-Light</a>
+      </div>
+      <div class='meta'>
+        Last Post
+        <div class='timestamp' style='display:inline;'>1507593007</div>
+        by Cody L.
+      </div>
+      <div class='clear'></div>
+      </div>
+      <div class="postlisting" data-postid="5627129">
+      <ul class='infoboxes'>
+        <li>
+          0 <span class='pictos'>q</span>
+        </li>
+        <li>
+          8 <span class='pictos'>E</span>
+        </li>
+      </ul>
+      <div class='title'>
+        <a href='/forum/post/5627129/lfg-weekly-or-bi-weekly-saturday-slash-sunday-evenings-after-7pm-est'>LFG Weekly or bi weekly Saturday/Sunday evenings after 7pm EST</a>
+      </div>
+      <div class='meta'>
+        Last Post
+        <div class='timestamp' style='display:inline;'>1507591488</div>
+        by Keith L.
+      </div>
+      <div class='clear'></div>
+      </div>
+      <div class="postlisting" data-postid="5627080">
+      <ul class='infoboxes'>
+        <li>
+          0 <span class='pictos'>q</span>
+        </li>
+        <li>
+          7 <span class='pictos'>E</span>
+        </li>
+      </ul>
+      <div class='title'>
+        <a href='/forum/post/5627080/lfgm-game-of-thrones-time-negotiable-anyone-interested-in-hosting-game-of-thrones'>[LFGM][Game of Thrones][Time Negotiable] Anyone interested in hosting game of thrones?</a>
+      </div>
+      <div class='meta'>
+        Last Post
+        <div class='timestamp' style='display:inline;'>1507590762</div>
+        by DragonGuy1337
+      </div>
+      <div class='clear'></div>
+      </div>
+      <div class="postlisting" data-postid="5627038">
+      <ul class='infoboxes'>
+        <li>
+          0 <span class='pictos'>q</span>
+        </li>
+        <li>
+          21 <span class='pictos'>E</span>
+        </li>
+      </ul>
+      <div class='title'>
+        <a href='/forum/post/5627038/lfdm-weekly-group-of-5-experienced-players-looking-for-dm'>[LFDM][Weekly] Group of 5 experienced players looking for DM!</a>
+      </div>
+      <div class='meta'>
+        Last Post
+        <div class='timestamp' style='display:inline;'>1507590059</div>
+        by Cody D.
+      </div>
+      <div class='clear'></div>
+      </div>
+      <div class="postlisting" data-postid="5627032">
+      <ul class='infoboxes'>
+        <li>
+          0 <span class='pictos'>q</span>
+        </li>
+        <li>
+          14 <span class='pictos'>E</span>
+        </li>
+      </ul>
+      <div class='title'>
+        <a href='/forum/post/5627032/lfg-est-2-players-for-rifts-monday-evenings-et-6-10-30pm-if-possible'>[LFG][EST] 2 players for Rifts (Monday evenings ET 6-10:30pm if possible)</a>
+      </div>
+      <div class='meta'>
+        Last Post
+        <div class='timestamp' style='display:inline;'>1507589820</div>
+        by Mark E.
+      </div>
+      <div class='clear'></div>
+      </div>
+      <div class="postlisting" data-postid="5626313">
+      <ul class='infoboxes'>
+        <li>
+          3 <span class='pictos'>q</span>
+        </li>
+        <li>
+          36 <span class='pictos'>E</span>
+        </li>
+      </ul>
+      <div class='title'>
+        <a href='/forum/post/5626313/lfg-est-d-and-d-5-slash-3-dot-5e-experienced-player-looking-for-long-term-game'>[LFG] [EST] [D&amp;D 5/3.5e] Experienced Player- Looking for Long-term Game</a>
+      </div>
+      <div class='meta'>
+        Last Post
+        <div class='timestamp' style='display:inline;'>1507589301</div>
+        by Roland C.
+      </div>
+      <div class='clear'></div>
+      </div>
+      <div class="postlisting" data-postid="5626992">
+      <ul class='infoboxes'>
+        <li>
+          0 <span class='pictos'>q</span>
+        </li>
+        <li>
+          13 <span class='pictos'>E</span>
+        </li>
+      </ul>
+      <div class='title'>
+        <a href='/forum/post/5626992/anyone-interested-in-joining-a-tales-from-the-loop-game'>Anyone interested in joining a Tales from the Loop game?</a>
+      </div>
+      <div class='meta'>
+        Last Post
+        <div class='timestamp' style='display:inline;'>1507589101</div>
+        by Frownie
+      </div>
+      <div class='clear'></div>
+      </div>
+      <div class="postlisting" data-postid="5626935">
+      <ul class='infoboxes'>
+        <li>
+          0 <span class='pictos'>q</span>
+        </li>
+        <li>
+          12 <span class='pictos'>E</span>
+        </li>
+      </ul>
+      <div class='title'>
+        <a href='/forum/post/5626935/lfdm-group-of-friends-6-8-looking-for-a-dm-wed-7-10-et'>[LFDM] Group of Friends 6-8 Looking for a DM Wed 7-10 ET</a>
+      </div>
+      <div class='meta'>
+        Last Post
+        <div class='timestamp' style='display:inline;'>1507588230</div>
+        by JahCena
+      </div>
+      <div class='clear'></div>
+      </div>
+      <div class="postlisting" data-postid="5614538">
+      <ul class='infoboxes'>
+        <li>
+          1 <span class='pictos'>q</span>
+        </li>
+        <li>
+          58 <span class='pictos'>E</span>
+        </li>
+      </ul>
+      <div class='title'>
+        <a href='/forum/post/5614538/looking-for-players-dot-dot-dot-gmt-or-european-forgotten-realms-5e-west-marches-campaign-set-in-1370dr-the-savage-frontier'>Looking for Players... GMT or European!! Forgotten Realms 5e West Marches campaign, set in 1370DR – “The Savage Frontier”</a>
+      </div>
+      <div class='meta'>
+        Last Post
+        <div class='timestamp' style='display:inline;'>1507586891</div>
+        by Ross M.
+      </div>
+      <div class='clear'></div>
+      </div>
+      <div class="postlisting" data-postid="5614635">
+      <ul class='infoboxes'>
+        <li>
+          10 <span class='pictos'>q</span>
+        </li>
+        <li>
+          263 <span class='pictos'>E</span>
+        </li>
+      </ul>
+      <div class='title'>
+        <a href='/forum/post/5614635/persona'>Persona</a>
+      </div>
+      <div class='meta'>
+        Last Post
+        <div class='timestamp' style='display:inline;'>1507586028</div>
+        by The Rollbear
+      </div>
+      <div class='clear'></div>
+      </div>
+      <div class="postlisting" data-postid="5626809">
+      <ul class='infoboxes'>
+        <li>
+          0 <span class='pictos'>q</span>
+        </li>
+        <li>
+          17 <span class='pictos'>E</span>
+        </li>
+      </ul>
+      <div class='title'>
+        <a href='/forum/post/5626809/d-and-d-newbie-nights-number-2'>D&amp;D Newbie Nights #2</a>
+      </div>
+      <div class='meta'>
+        Last Post
+        <div class='timestamp' style='display:inline;'>1507585908</div>
+        by The Rollbear
+      </div>
+      <div class='clear'></div>
+      </div>
+      <div class="postlisting" data-postid="5624921">
+      <ul class='infoboxes'>
+        <li>
+          2 <span class='pictos'>q</span>
+        </li>
+        <li>
+          44 <span class='pictos'>E</span>
+        </li>
+      </ul>
+      <div class='title'>
+        <a href='/forum/post/5624921/new-player-looking-for-a-5e-group'>New player looking for a 5E group.</a>
+      </div>
+      <div class='meta'>
+        Last Post
+        <div class='timestamp' style='display:inline;'>1507585533</div>
+        by The Rollbear
+      </div>
+      <div class='clear'></div>
+      </div>
+      <div class="postlisting" data-postid="5626772">
+      <ul class='infoboxes'>
+        <li>
+          0 <span class='pictos'>q</span>
+        </li>
+        <li>
+          11 <span class='pictos'>E</span>
+        </li>
+      </ul>
+      <div class='title'>
+        <a href='/forum/post/5626772/regular-meeting-group-in-manchester-uk'>Regular meeting group in Manchester UK?</a>
+      </div>
+      <div class='meta'>
+        Last Post
+        <div class='timestamp' style='display:inline;'>1507585276</div>
+        by Edward  G.
+      </div>
+      <div class='clear'></div>
+      </div>
+      <div class="postlisting" data-postid="5626744">
+      <ul class='infoboxes'>
+        <li>
+          0 <span class='pictos'>q</span>
+        </li>
+        <li>
+          10 <span class='pictos'>E</span>
+        </li>
+      </ul>
+      <div class='title'>
+        <a href='/forum/post/5626744/lfg-dnd5e-est'>LFG DnD5e ESt</a>
+      </div>
+      <div class='meta'>
+        Last Post
+        <div class='timestamp' style='display:inline;'>1507584659</div>
+        by Nick P.
+      </div>
+      <div class='clear'></div>
+      </div>
+      <div class="postlisting" data-postid="5625668">
+      <ul class='infoboxes'>
+        <li>
+          3 <span class='pictos'>q</span>
+        </li>
+        <li>
+          35 <span class='pictos'>E</span>
+        </li>
+      </ul>
+      <div class='title'>
+        <a href='/forum/post/5625668/experienced-player-looking-for-rp-slash-rpg'>Experienced Player Looking for RP/RPG</a>
+      </div>
+      <div class='meta'>
+        Last Post
+        <div class='timestamp' style='display:inline;'>1507583929</div>
+        by Drask
+      </div>
+      <div class='clear'></div>
+      </div>
+      <div class="postlisting" data-postid="5625688">
+      <ul class='infoboxes'>
+        <li>
+          2 <span class='pictos'>q</span>
+        </li>
+        <li>
+          35 <span class='pictos'>E</span>
+        </li>
+      </ul>
+      <div class='title'>
+        <a href='/forum/post/5625688/lfdm-weekly-3-5-new-players-looking-for-dm-saturdays-slash-sundays-mornings-est'>[LFDM][Weekly]3-5 new players looking for DM Saturdays/Sundays mornings EST</a>
+      </div>
+      <div class='meta'>
+        Last Post
+        <div class='timestamp' style='display:inline;'>1507583900</div>
+        by Drask
+      </div>
+      <div class='clear'></div>
+      </div>
+      <div class="postlisting" data-postid="5626685">
+      <ul class='infoboxes'>
+        <li>
+          0 <span class='pictos'>q</span>
+        </li>
+        <li>
+          9 <span class='pictos'>E</span>
+        </li>
+      </ul>
+      <div class='title'>
+        <a href='/forum/post/5626685/lfg-d-and-d-5thed-gmt-2-uk-players-looking-for-regular-campaign'>[LFG] [D&amp;D 5thEd] [GMT] 2 UK players looking for regular campaign</a>
+      </div>
+      <div class='meta'>
+        Last Post
+        <div class='timestamp' style='display:inline;'>1507583554</div>
+        by Claire H.
+      </div>
+      <div class='clear'></div>
+      </div>
+      <div class="postlisting" data-postid="5626659">
+      <ul class='infoboxes'>
+        <li>
+          0 <span class='pictos'>q</span>
+        </li>
+        <li>
+          20 <span class='pictos'>E</span>
+        </li>
+      </ul>
+      <div class='title'>
+        <a href='/forum/post/5626659/lfg-friendly-dm-looking-for-groups-to-tackle-my-homebrew-5e'>[LFG] friendly DM looking for groups to tackle my homebrew 5E</a>
+      </div>
+      <div class='meta'>
+        Last Post
+        <div class='timestamp' style='display:inline;'>1507583109</div>
+        by Giantdad f.
+      </div>
+      <div class='clear'></div>
+      </div>
+      <div class="postlisting" data-postid="5626345">
+      <ul class='infoboxes'>
+        <li>
+          1 <span class='pictos'>q</span>
+        </li>
+        <li>
+          27 <span class='pictos'>E</span>
+        </li>
+      </ul>
+      <div class='title'>
+        <a href='/forum/post/5626345/lfg-slash-gm-warhammer-40k-dark-heresy-slash-shadowrun'>LFG/GM Warhammer 40k Dark Heresy/Shadowrun</a>
+      </div>
+      <div class='meta'>
+        Last Post
+        <div class='timestamp' style='display:inline;'>1507581853</div>
+        by Rerednaw
+      </div>
+      <div class='clear'></div>
+      </div>
+      <div class="postlisting" data-postid="5626438">
+      <ul class='infoboxes'>
+        <li>
+          0 <span class='pictos'>q</span>
+        </li>
+        <li>
+          30 <span class='pictos'>E</span>
+        </li>
+      </ul>
+      <div class='title'>
+        <a href='/forum/post/5626438/looking-for-1-player-tomb-of-annihilation'>Looking for 1 player Tomb of Annihilation</a>
+      </div>
+      <div class='meta'>
+        Last Post
+        <div class='timestamp' style='display:inline;'>1507579542</div>
+        by RiJect
+      </div>
+      <div class='clear'></div>
+      </div>
+      <div class="postlisting" data-postid="5624152">
+      <ul class='infoboxes'>
+        <li>
+          1 <span class='pictos'>q</span>
+        </li>
+        <li>
+          39 <span class='pictos'>E</span>
+        </li>
+      </ul>
+      <div class='title'>
+        <a href='/forum/post/5624152/2-experienced-players-lfg-pathfinder-slash-d-and-d'>2 experienced players LFG Pathfinder/D&amp;D</a>
+      </div>
+      <div class='meta'>
+        Last Post
+        <div class='timestamp' style='display:inline;'>1507578932</div>
+        by Necros V.
+      </div>
+      <div class='clear'></div>
+      </div>
+      <div class="postlisting" data-postid="5626371">
+      <ul class='infoboxes'>
+        <li>
+          0 <span class='pictos'>q</span>
+        </li>
+        <li>
+          30 <span class='pictos'>E</span>
+        </li>
+      </ul>
+      <div class='title'>
+        <a href='/forum/post/5626371/lfp-d-and-d-5e-storm-kings-thunder'>[LFP][D&amp;D 5e] Storm King's Thunder</a>
+      </div>
+      <div class='meta'>
+        Last Post
+        <div class='timestamp' style='display:inline;'>1507578219</div>
+        by Arkeia
+      </div>
+      <div class='clear'></div>
+      </div>
+      <div class="postlisting" data-postid="5626179">
+      <ul class='infoboxes'>
+        <li>
+          0 <span class='pictos'>q</span>
+        </li>
+        <li>
+          19 <span class='pictos'>E</span>
+        </li>
+      </ul>
+      <div class='title'>
+        <a href='/forum/post/5626179/lfg-5e-experienced-player-looking-for-weekly-group'>[LFG] [5e] Experienced player looking for weekly group</a>
+      </div>
+      <div class='meta'>
+        Last Post
+        <div class='timestamp' style='display:inline;'>1507575232</div>
+        by Kris
+      </div>
+      <div class='clear'></div>
+      </div>
+      <div class="postlisting" data-postid="5625348">
+      <ul class='infoboxes'>
+        <li>
+          2 <span class='pictos'>q</span>
+        </li>
+        <li>
+          53 <span class='pictos'>E</span>
+        </li>
+      </ul>
+      <div class='title'>
+        <a href='/forum/post/5625348/player-looking-for-dnd5e-game'>Player looking for DND5e game</a>
+      </div>
+      <div class='meta'>
+        Last Post
+        <div class='timestamp' style='display:inline;'>1507575120</div>
+        by Nick P.
+      </div>
+      <div class='clear'></div>
+      </div>
+      <div class="postlisting" data-postid="5626043">
+      <ul class='infoboxes'>
+        <li>
+          0 <span class='pictos'>q</span>
+        </li>
+        <li>
+          25 <span class='pictos'>E</span>
+        </li>
+      </ul>
+      <div class='title'>
+        <a href='/forum/post/5626043/lfp-d-and-d-5e-mon-7pm-est-pay2play-slash-paypal-tomb-of-annihilation'>[LFP][D&amp;D 5e][Mon 7pm EST][Pay2Play/PayPal] TOMB OF ANNIHILATION!!</a>
+      </div>
+      <div class='meta'>
+        Last Post
+        <div class='timestamp' style='display:inline;'>1507572428</div>
+        by Drask
+      </div>
+      <div class='clear'></div>
+      </div>
+      <div class="postlisting" data-postid="5616142">
+      <ul class='infoboxes'>
+        <li>
+          8 <span class='pictos'>q</span>
+        </li>
+        <li>
+          179 <span class='pictos'>E</span>
+        </li>
+      </ul>
+      <div class='title'>
+        <a href='/forum/post/5616142/online-pathfinder-weekly-saturday-pst-looking-for-a-couple-players-to-fill-the-party'>[Online][Pathfinder][Weekly][Saturday][PST] Looking for a couple players to fill the party!</a>
+      </div>
+      <div class='meta'>
+        Last Post
+        <div class='timestamp' style='display:inline;'>1507571459</div>
+        by Torr
+      </div>
+      <div class='clear'></div>
+      </div>
+      <div class="postlisting" data-postid="5625946">
+      <ul class='infoboxes'>
+        <li>
+          0 <span class='pictos'>q</span>
+        </li>
+        <li>
+          25 <span class='pictos'>E</span>
+        </li>
+      </ul>
+      <div class='title'>
+        <a href='/forum/post/5625946/lfp-5e-homebrew-sandbox-style-sundays-2pm-mst-weekly'>[LFP][5E][Homebrew][Sandbox Style]Sundays 2pm MST Weekly</a>
+      </div>
+      <div class='meta'>
+        Last Post
+        <div class='timestamp' style='display:inline;'>1507570954</div>
+        by Dale J.
+      </div>
+      <div class='clear'></div>
+      </div>
+      <div class="postlisting" data-postid="5620130">
+      <ul class='infoboxes'>
+        <li>
+          3 <span class='pictos'>q</span>
+        </li>
+        <li>
+          83 <span class='pictos'>E</span>
+        </li>
+      </ul>
+      <div class='title'>
+        <a href='/forum/post/5620130/lfg-any-building-games'>[LFG] Any Building Games?</a>
+      </div>
+      <div class='meta'>
+        Last Post
+        <div class='timestamp' style='display:inline;'>1507568170</div>
+        by Rerednaw
+      </div>
+      <div class='clear'></div>
+      </div>
+      <div class="postlisting" data-postid="5614079">
+      <ul class='infoboxes'>
+        <li>
+          2 <span class='pictos'>q</span>
+        </li>
+        <li>
+          56 <span class='pictos'>E</span>
+        </li>
+      </ul>
+      <div class='title'>
+        <a href='/forum/post/5614079/lfg-{weekends-gmt-plus-9-interest-check-on-black-crusade-slash-rogue-trader'>[LFG] {Weekends] [GMT+9] Interest Check on Black Crusade / Rogue Trader?</a>
+      </div>
+      <div class='meta'>
+        Last Post
+        <div class='timestamp' style='display:inline;'>1507568109</div>
+        by Rerednaw
+      </div>
+      <div class='clear'></div>
+      </div>
+      <div class="postlisting" data-postid="5474720">
+      <ul class='infoboxes'>
+        <li>
+          3 <span class='pictos'>q</span>
+        </li>
+        <li>
+          172 <span class='pictos'>E</span>
+        </li>
+      </ul>
+      <div class='title'>
+        <a href='/forum/post/5474720/lf2p-regular-monday-evening-d-and-d-5e-game'>[LF2P] regular Monday evening D&amp;D 5E game</a>
+      </div>
+      <div class='meta'>
+        Last Post
+        <div class='timestamp' style='display:inline;'>1507567873</div>
+        by The Vorpal DM
+      </div>
+      <div class='clear'></div>
+      </div>
+      <div class="postlisting" data-postid="5588418">
+      <ul class='infoboxes'>
+        <li>
+          3 <span class='pictos'>q</span>
+        </li>
+        <li>
+          115 <span class='pictos'>E</span>
+        </li>
+      </ul>
+      <div class='title'>
+        <a href='/forum/post/5588418/lfp-5e-homebrew-open-setting-saturdays-4pm-est-weekly'>[LFP][5E][homebrew][Open setting]Saturdays 4pm EST Weekly</a>
+      </div>
+      <div class='meta'>
+        Last Post
+        <div class='timestamp' style='display:inline;'>1507566451</div>
+        by lord mage
+      </div>
+      <div class='clear'></div>
+      </div>
+      <div class="postlisting" data-postid="5625710">
+      <ul class='infoboxes'>
+        <li>
+          0 <span class='pictos'>q</span>
+        </li>
+        <li>
+          12 <span class='pictos'>E</span>
+        </li>
+      </ul>
+      <div class='title'>
+        <a href='/forum/post/5625710/cerco-gruppo-italiano-per-d-and-d-5e'>CERCO GRUPPO ITALIANO PER D&amp;D 5e</a>
+      </div>
+      <div class='meta'>
+        Last Post
+        <div class='timestamp' style='display:inline;'>1507565790</div>
+        by Luca V.
+      </div>
+      <div class='clear'></div>
+      </div>
+      <div class="postlisting" data-postid="5625670">
+      <ul class='infoboxes'>
+        <li>
+          0 <span class='pictos'>q</span>
+        </li>
+        <li>
+          30 <span class='pictos'>E</span>
+        </li>
+      </ul>
+      <div class='title'>
+        <a href='/forum/post/5625670/the-old-margreve'>The old Margreve</a>
+      </div>
+      <div class='meta'>
+        Last Post
+        <div class='timestamp' style='display:inline;'>1507565037</div>
+        by Dhrakken
+      </div>
+      <div class='clear'></div>
+      </div>
+      <div class="postlisting" data-postid="5625494">
+      <ul class='infoboxes'>
+        <li>
+          0 <span class='pictos'>q</span>
+        </li>
+        <li>
+          42 <span class='pictos'>E</span>
+        </li>
+      </ul>
+      <div class='title'>
+        <a href='/forum/post/5625494/step-right-up-looking-for-a-strongman-for-carnival-act'>Step Right Up!  Looking for a Strongman for Carnival Act!</a>
+      </div>
+      <div class='meta'>
+        Last Post
+        <div class='timestamp' style='display:inline;'>1507562135</div>
+        by Alain D.
+      </div>
+      <div class='clear'></div>
+      </div>
+      <div class="postlisting" data-postid="5609373">
+      <ul class='infoboxes'>
+        <li>
+          2 <span class='pictos'>q</span>
+        </li>
+        <li>
+          76 <span class='pictos'>E</span>
+        </li>
+      </ul>
+      <div class='title'>
+        <a href='/forum/post/5609373/text-based-player-pathfinder-slash-d-and-d-3-dot-5-4-5e-but-flexible-if-earlier'>Text Based Player; Pathfinder/D&amp;D 3.5, 4, 5e ((But flexible if earlier))</a>
+      </div>
+      <div class='meta'>
+        Last Post
+        <div class='timestamp' style='display:inline;'>1507555836</div>
+        by Erich S.
+      </div>
+      <div class='clear'></div>
+      </div>
+      <div class="postlisting" data-postid="5625193">
+      <ul class='infoboxes'>
+        <li>
+          0 <span class='pictos'>q</span>
+        </li>
+        <li>
+          13 <span class='pictos'>E</span>
+        </li>
+      </ul>
+      <div class='title'>
+        <a href='/forum/post/5625193/recherche-dun-mj-pour-polaris'>Recherche d'un MJ pour Polaris</a>
+      </div>
+      <div class='meta'>
+        Last Post
+        <div class='timestamp' style='display:inline;'>1507555194</div>
+        by Aqué
+      </div>
+      <div class='clear'></div>
+      </div>
+      <div class="postlisting" data-postid="5624592">
+      <ul class='infoboxes'>
+        <li>
+          1 <span class='pictos'>q</span>
+        </li>
+        <li>
+          33 <span class='pictos'>E</span>
+        </li>
+      </ul>
+      <div class='title'>
+        <a href='/forum/post/5624592/lfps-dawn-of-worlds-divines'>[LFPs] Dawn of Worlds: Divines</a>
+      </div>
+      <div class='meta'>
+        Last Post
+        <div class='timestamp' style='display:inline;'>1507551552</div>
+        by Andrew R.
+      </div>
+      <div class='clear'></div>
+      </div>
+      <div class="postlisting" data-postid="5624490">
+      <ul class='infoboxes'>
+        <li>
+          2 <span class='pictos'>q</span>
+        </li>
+        <li>
+          86 <span class='pictos'>E</span>
+        </li>
+      </ul>
+      <div class='title'>
+        <a href='/forum/post/5624490/d-and-d-5th-edition-looking-for-new-to-semi-new-players-to-form-a-group'>[D&amp;D 5th Edition] Looking for new to semi-new players to form a group!</a>
+      </div>
+      <div class='meta'>
+        Last Post
+        <div class='timestamp' style='display:inline;'>1507547862</div>
+        by Jamie E.
+      </div>
+      <div class='clear'></div>
+      </div>
+      <div class="postlisting" data-postid="5584039">
+      <ul class='infoboxes'>
+        <li>
+          7 <span class='pictos'>q</span>
+        </li>
+        <li>
+          198 <span class='pictos'>E</span>
+        </li>
+      </ul>
+      <div class='title'>
+        <a href='/forum/post/5584039/legends-of-the-five-ring-beta'>Legends of the Five Ring Beta</a>
+      </div>
+      <div class='meta'>
+        Last Post
+        <div class='timestamp' style='display:inline;'>1507532265</div>
+        by David P.
+      </div>
+      <div class='clear'></div>
+      </div>
+      <div class="postlisting" data-postid="5624719">
+      <ul class='infoboxes'>
+        <li>
+          0 <span class='pictos'>q</span>
+        </li>
+        <li>
+          35 <span class='pictos'>E</span>
+        </li>
+      </ul>
+      <div class='title'>
+        <a href='/forum/post/5624719/looking-for-shadowrun-game'>Looking for shadowrun game!</a>
+      </div>
+      <div class='meta'>
+        Last Post
+        <div class='timestamp' style='display:inline;'>1507532031</div>
+        by Vexx
+      </div>
+      <div class='clear'></div>
+      </div>
+      <div class="postlisting" data-postid="5624583">
+      <ul class='infoboxes'>
+        <li>
+          0 <span class='pictos'>q</span>
+        </li>
+        <li>
+          27 <span class='pictos'>E</span>
+        </li>
+      </ul>
+      <div class='title'>
+        <a href='/forum/post/5624583/lfp-star-trek-adventures-saturdays-at-3-15pm-edt-starting-oct-28th-sta-ophion-now-recruiting'>[LFP][Star Trek Adventures] - Saturdays @ 3:15pm EDT starting Oct 28th - STA: Ophion now recruiting!</a>
+      </div>
+      <div class='meta'>
+        Last Post
+        <div class='timestamp' style='display:inline;'>1507526973</div>
+        by ELH
+      </div>
+      <div class='clear'></div>
+      </div>
+      <div class="postlisting" data-postid="5624205">
+      <ul class='infoboxes'>
+        <li>
+          0 <span class='pictos'>q</span>
+        </li>
+        <li>
+          26 <span class='pictos'>E</span>
+        </li>
+      </ul>
+      <div class='title'>
+        <a href='/forum/post/5624205/lfg-d-and-d-slash-pf-slash-coc-slash-wh40k'>[LFG] D&amp;D/PF/CoC/WH40k</a>
+      </div>
+      <div class='meta'>
+        Last Post
+        <div class='timestamp' style='display:inline;'>1507517031</div>
+        by Inquisitor Shadowtide
+      </div>
+      <div class='clear'></div>
+      </div>
+      <div class="postlisting" data-postid="5619628">
+      <ul class='infoboxes'>
+        <li>
+          2 <span class='pictos'>q</span>
+        </li>
+        <li>
+          151 <span class='pictos'>E</span>
+        </li>
+      </ul>
+      <div class='title'>
+        <a href='/forum/post/5619628/lfp-shadowrun-5e-sunday-nights-etz'>[LFP], Shadowrun 5e, Sunday Nights, ETZ</a>
+      </div>
+      <div class='meta'>
+        Last Post
+        <div class='timestamp' style='display:inline;'>1507515863</div>
+        by Animus
+      </div>
+      <div class='clear'></div>
+      </div>
+      <div class="postlisting" data-postid="5624087">
+      <ul class='infoboxes'>
+        <li>
+          0 <span class='pictos'>q</span>
+        </li>
+        <li>
+          56 <span class='pictos'>E</span>
+        </li>
+      </ul>
+      <div class='title'>
+        <a href='/forum/post/5624087/lfp-for-a-homebrew-campaign-of-their-choice'>LFP for a homebrew campaign of their choice</a>
+      </div>
+      <div class='meta'>
+        Last Post
+        <div class='timestamp' style='display:inline;'>1507514249</div>
+        by SoulsBorne (Bailey S)
+      </div>
+      <div class='clear'></div>
+      </div>
+      <div class="postlisting" data-postid="5621859">
+      <ul class='infoboxes'>
+        <li>
+          2 <span class='pictos'>q</span>
+        </li>
+        <li>
+          60 <span class='pictos'>E</span>
+        </li>
+      </ul>
+      <div class='title'>
+        <a href='/forum/post/5621859/looking-for-an-introduction-to-the-world-of-shadowrun'>Looking for an introduction to the world of shadowrun!</a>
+      </div>
+      <div class='meta'>
+        Last Post
+        <div class='timestamp' style='display:inline;'>1507512364</div>
+        by Animus
+      </div>
+      <div class='clear'></div>
+      </div>
+      <div class="postlisting" data-postid="5532160">
+      <ul class='infoboxes'>
+        <li>
+          8 <span class='pictos'>q</span>
+        </li>
+        <li>
+          212 <span class='pictos'>E</span>
+        </li>
+      </ul>
+      <div class='title'>
+        <a href='/forum/post/5532160/lfdm-dungeon-and-dragons-3-slash-3-dot-5-e-gestalt-campaign-weekly-games-sundays-1-5-pm-mountain-time'>LFDM- Dungeon and Dragons 3/3.5 E Gestalt campaign Weekly games -Sundays 1-5 pm Mountain time</a>
+      </div>
+      <div class='meta'>
+        Last Post
+        <div class='timestamp' style='display:inline;'>1507510577</div>
+        by Douglas W.
+      </div>
+      <div class='clear'></div>
+      </div>
+      <div class="postlisting" data-postid="5613316">
+      <ul class='infoboxes'>
+        <li>
+          6 <span class='pictos'>q</span>
+        </li>
+        <li>
+          255 <span class='pictos'>E</span>
+        </li>
+      </ul>
+      <div class='title'>
+        <a href='/forum/post/5613316/lfp-5e-ponyfinder-est'>[LFP] [5E Ponyfinder] [EST]</a>
+      </div>
+      <div class='meta'>
+        Last Post
+        <div class='timestamp' style='display:inline;'>1507508703</div>
+        by Zez L.
+      </div>
+      <div class='clear'></div>
+      </div>
+    </div>
+    <div class='pagination col-md-12'>
+      <div class='nextpage pull-right'>
+        <a href='/forum/category/22/?p=1'>Next &raquo;</a>
+      </div>
+    </div>
+  </div>
+</div>
+<script type='text/javascript'>
+  window.categoryid = "22";
+</script>
+<script type="text/javascript">
+
+	$("#newtopic .content").redactor({
+        minHeight: 50,
+        // maxHeight: 400,
+        observeImages: true,
+        imageUpload: "/forum/upload",
+        tidyHtml: false,
+        linkNofollow: true,
+        linebreaks: true,
+        formattingPre: true,
+        imageUploadErrorCallback: function(obj, json) {
+            alert("Unable to upload image. Please make sure it is a GIF, JPG, or PNG file less than 10 MB in size.");
+        },
+        buttons: ['formatting', '|', 'bold', 'italic', 'deleted', '|', 'unorderedlist', 'orderedlist', 'outdent', 'indent', '|',
+                    'table', 'link', 'image', 'alignment']
+    });
+
+    $(".quotepost").on("click", function() {
+        var quotable = $(this).parents(".post").find(".postcontent").html();
+        var $name = $(this).parents(".post").find(".meta .name a");
+        $("#newtopic .content").redactor("insertHtml", "<blockquote><p><em><a href=\"https://app.roll20.net" + $name.attr("href") + "\">" + $.trim($name.text()) + "</a> said:</em></p>" + quotable + "</blockquote><br><br>");
+        $("#newtopic .content").focus();
+    });
+
+    $(".flagpost").on("click", function() {
+        if($(this).hasClass('flagpost') === false) return;
+        confirmation = "";
+        while(confirmation == "Please provide details" || confirmation == "") {
+            var confirmation = prompt("Submit this post for moderator action? Please only flag posts which violate the Roll20 Code of Conduct. Press OK to notify the Moderators, Cancel to cancel.");
+        };
+        if(confirmation) {
+            var othis = this;
+            $.post("/forum/flagpost/" + $(this).parents(".post").attr("data-postid"), {prompt: confirmation}, function() {
+                $(othis).removeClass("flagpost").removeAttr("href").text("Flagged!");
+            });
+        }
+    });
+
+    $("#newtopic form").on("submit", function() {
+    	if($("#newtopic input[name=title]").val() == "" || $("#newtopic .content").val() == "") {
+    		alert("Please include both a title and content for your post.");
+    		return false;
+    	}
+        if($(".g-recaptcha").length > 0) {
+            response = grecaptcha.getResponse()
+            if(response == ""){
+                alert("Please complete the captcha below.");
+                return false;
+            }
+        }
+
+        $("#newtopic button[type=submit]").attr("disabled", "disabled").text("Please wait...");
+    });
+
+    $("button.shownewtopic").on("click", function() {
+    	$("#newtopic").show();
+    	window.location.hash = "newtopic";
+    });
+
+    if(window.location.hash == "#newtopic") {
+        $("#newtopic").show();
+    }
+
+    var currenttime = new Date().getTime();
+
+    $(".timestamp").each(function() {
+		var time = parseInt($.trim($(this).text()), 10);
+		var d = Date.create(time*1000);
+        if(currenttime - d.getTime() > 1000*60*60*24) {
+            $(this).text(d.format('{Month} {dd}') + " (" + d.relative() + ")");
+        }
+        else {
+            $(this).text(d.format('{h}:{mm}{TT}') + " (" + d.relative() + ")");
+        }
+		
+	});
+
+    $(".forumsearch input").on("keydown", function(e) {
+        if(e.which == 13) {
+            prevcat = window.location.search.substring(1).split("c=")[1];
+            if(window.categoryid) {
+                cat = window.categoryid
+            }
+            else if(prevcat != undefined) {
+                cat = prevcat
+            }
+            else {
+                cat = ""
+            }
+            window.location = "/forum/search?q="+escape($(this).val())+"&c="+cat;
+            return false;
+        }
+
+    });
+
+    $(".addvote, .removevote").on("click", function() {
+        var $post = $(this).parents(".postlisting, .singlepost");
+        var $this = $(this);
+        var type = $this.hasClass("addvote") ? "add" : "remove";
+        $.post("/forum/vote/" + $this.attr('data-postid') + "/" + type, function(data) {
+            if(data === "success") {
+                if(type === "add") {
+                    $this.removeClass("addvote").addClass("removevote");
+                    $post.find(".currentvotes").text(parseInt($post.find(".currentvotes").text(), 10) + 1);
+                }
+                else {
+                    $this.removeClass("removevote").addClass("addvote");
+                    $post.find(".currentvotes").text(parseInt($post.find(".currentvotes").text(), 10) - 1);   
+                }
+            }
+            else if(data === "toomanyvotes") {
+                alert("You have already cast your maximum number of allowed votes for suggestions. Remove your vote from other suggestions to vote for this one.");
+            }
+        })
+    });
+
+    $(document).on("ready", function() {
+       
+        
+        if (window.location.hash !== "" && window.location.hash !== "#newtopic" && window.location.hash.indexOf("post-") !== -1) {
+            //Is it on this page?
+            if(window.location.toString().indexOf("pageforid") === -1 && $(".post[data-postid=" + window.location.hash.split("-")[1] + "]").length === 0) {
+                console.log("Not on this page!");
+                console.log("/forum/permalink/" + window.location.hash.split("-")[1]);
+                //This is a permalink to a post in this thread, but we don't know what page it's on. Redirect.
+                window.location = "/forum/permalink/" + window.location.hash.split("-")[1];
+            }
+        }
+
+        //Create clickable links for uploaded images.
+        $(".postcontent img[src^='https://s3.amazonaws.com/files.']").each(function() {
+            $(this).wrap("<a class='lightly' href='" + $(this).attr("src").replace("med.", "original.") + "'></a>");
+        });
+    });
+
+    $("#votingorderby").on("click", "button", function() {
+        window.location = "/forum/category/" + window.categoryid + "/?orderby=" + $(this).attr("data-showing");
+    })
+
+    $(".hidecomments").on("click", function() {
+        console.log($(this).attr("data-showing"));
+        window.location = "/forum/category/" + window.categoryid + "/?hidecomments=" + $(this).attr("data-showing");
+    })
+
+    $(".updatecatfilter").on("click", function() {
+        var catval = $("select[name=catids]").val();
+        window.location = "/forum/alldiscussions/" + (catval ? "?catids=" + catval.join(",") : "");
+    });
+    
+
+</script>
+
+
+	</div>
+
+	<div class="container globalfooter">
+
+		<div class="row" style="padding-bottom: 20px; padding-top: 60px;">
+
+			<div class="col-md-12">
+
+				<div class="footerborder1"></div>
+				<div class="footerborder2"></div>
+
+			</div>
+
+		</div>
+
+		<div class="row">
+
+			<div class="col-md-12 copyrightnotice">
+
+				<p style="border-top: none; padding-top: 0px;">&copy; The Orr Group, LLC &middot; <a href="https://wiki.roll20.net/Acknowledgements">Acknowledgements</a> &middot; <a href="https://wiki.roll20.net/Terms_of_Service_and_Privacy_Policy">Terms of Service & Privacy Policy</a> &middot; <a href="https://wiki.roll20.net/Terms_of_Service_and_Privacy_Policy">DMCA</a> &middot; Need Help? <a href="https://wiki.roll20.net/Customer_Support_FAQ">Visit our FAQ!</a> &middot; <a href="https://plus.google.com/118384864526069238015">On Google+</a>
+				
+				</p>
+
+			</div>
+
+		</div>
+
+	</div>
+
+	<script id="tmpl_campaigntag" type="text/html">
+		<div class="tag"><$=this.model.get("tag")$></div>
+	</script>
+
+	<script id="tmpl_campaigntags" type="text/html">
+		<div class="tags tagset">
+			<div class="tagslabel">
+				<span class="pictos">z</span>
+				Tags:
+			</div>
+			<input>
+			<$ if(this.editable == "true") { $>
+			<div class="add">
+				<em>
+					<span class="pictos">p</span>
+					Edit Tags
+				</em>
+			</div>
+			<$ } $>
+		</div>
+		<div class="clear"></div>
+	</script>
+
+	<script id="tmpl_tokentag" type="text/html">
+            <div class="tag">
+                <$=this.model.get("tag")$>
+             </div>
+    </script>
+
+    <script id="tmpl_tokentags" type="text/html">
+        <div class="tags tagset">
+            <div class="label">
+                <span class="pictos">z</span>
+                Global Tags:
+            </div>
+            <input />
+            <$ if(this.editable == "true") { $>
+           	<div class="add">
+                <em>
+                    <span class="pictos">p</span>
+                    Edit Tags
+                </em>
+            </div>
+            <$ } $>
+        </div>
+        <div class="clear"></div>
+    </script>
+    <script id="tmpl_yourtag" type="text/html">
+            <div class="tag">
+                <$=this.model.get("tag")$>
+             </div>
+    </script>
+
+    <script id="tmpl_yourtags" type="text/html">
+        <div class="tags tagset">
+            <div class="label">
+                <span class="pictos">z</span>
+                Global Tags:
+            </div>
+            <input />
+            <$ if(this.editable == "true") { $>
+           	<div class="add">
+                <em>
+                    <span class="pictos">p</span>
+                    Edit Tags
+                </em>
+            </div>
+            <$ } $>
+        </div>
+        <div class="clear"></div>
+    </script>
+
+	<script id="tmpl_uploadslot" type="text/html">
+		<div class="avatar dropbox <$! (this != "" ? "filled" : "empty") $>">
+		<div class="status"></div>
+		<div class="inner">
+		<$ if(this == "") { $>
+		<h4 style="padding-bottom: 0px; marigin-bottom: 0px; color: #777;">Drop a File<small>(JPG, PNG, GIF)</small></h4>
+		<div style="margin-top: -5px; margin-bottom: 5px;">or</div>
+		<a href="javascript:void(0);" class="btn btn-info" style="margin-bottom: 10px;">Choose a File...</a>
+		<input class="manual" type="file" />
+		<$ } else { $>
+		<img src="<$!this$>" />
+		<div class='remove'><a href='javascript:void(0);'>Change Image</a></div>
+		<$ } $>
+		</div>
+		</div>
+	</script>
+
+	<script type="text/javascript">
+      $(function() {
+        var cookieName = 'roll20tempauth';
+        var cookieValue = Math.floor(Math.random()*100);
+        var myDate = new Date();
+        myDate.setMonth(myDate.getMonth() + 1);
+        var cookieinfo = cookieName +"=" + cookieValue + ";expires=" + myDate 
+                          + ";domain=.roll20.net;path=/";
+        document.cookie = cookieinfo;
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.src = '/sessions/topbar/'+cookieValue;
+        var x = document.getElementsByTagName('script')[0];
+        x.parentNode.insertBefore(s, x);
+      });
+    </script>
+
+	<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	
+		ga('create', 'UA-31040388-1', {'cookieDomain': 'auto'});
+	
+	ga('send', 'pageview');
+
+	</script>
+
+	
+
+</body>
+
+</html>
