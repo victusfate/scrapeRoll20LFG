@@ -1,9 +1,14 @@
 const rp        = require('request-promise')
 const cheerio   = require('cheerio')
 const path      = require('path')
+const execSync  = require('child_process').execSync
 
-const NPages    = 5;
-const sQuery    = process.argv[2] ? ('' + process.argv[2]).toLowerCase() : null
+const NPages    = 10;
+const aQueries  = []
+for (let i = 2;i < process.argv.length;i++) {
+  aQueries.push(('' + process.argv[i]).toLowerCase())
+}
+console.log('aQueries',aQueries)
 const sRoot     = 'https://app.roll20.net'
 const sBaseUrl  = `${sRoot}/forum/category/22`
 
@@ -15,9 +20,20 @@ const go = async () => {
     $('.title').each( function(i,oTest) {
       const sHref = $(this).children().first().attr('href')
       const sText = $(this).children().first().text()
+      const sLC   = sText.toLowerCase()
       const sData = $(this).html()
-      if (!sData.includes('picto') && sText.toLowerCase().includes(sQuery)) {
-        aData.push({ relUrl: path.join(sRoot,sHref), sText: sText })
+      if (!sData.includes('picto')) {
+        let bMatch = false
+        for (let i in aQueries) {
+          let sQuery = aQueries[i]
+          if (sLC.includes(sQuery)) {
+            bMatch = true
+            break
+          }
+        }
+        if (bMatch) {
+          aData.push({ relUrl: path.join(sRoot,sHref), sText: sText })
+        }
       }
     })
     console.log({ aData: aData })
@@ -26,7 +42,7 @@ const go = async () => {
 
   const getData = async () => {
     let aPromises = []
-    if (typeof sQuery === 'string' && sQuery.length > 0) {
+    if (aQueries.length > 0) {
       for (let i = 0;i < NPages;i++) {
         let sUrl = sBaseUrl
         if (i > 0) {
@@ -37,7 +53,7 @@ const go = async () => {
       }    
     }
     else {
-      return Promise.reject(Error(`sQuery not defined, pass in a game/pattern to find ${JSON.stringify(sQuery)}`))
+      return Promise.reject(Error(`aQueries empty, pass in a game/pattern to find ${JSON.stringify(sQuery)}`))
     }
     return Promise.all(aPromises)
   }
@@ -46,22 +62,31 @@ const go = async () => {
   }
 
   const aHtml = await getData()
-  // const aHtml = await getStub()
+  // const aHtml = await getStub() // for testing
   if (Array.isArray(aHtml)) {
     return aHtml.map( html => {
       return getPostTitles(html)
     })
   }
 
-  return null
+  return []
 
 }
 
 go().then( res => {
   console.log({ action: 'go.success', res: res })
   if (Array.isArray(res)) {
-    res.map( oData => {
-      console.log(oData)
+    res.map( aData => {
+      if (aData.length > 0) {
+        console.log(aData)
+        aData.map( oData => {
+          execSync(`open ${oData.relUrl}`, (err,stdout,stderr) => {
+            if (err) {
+              throw err
+            }
+          })
+        })
+      }
     })
   }
 })
