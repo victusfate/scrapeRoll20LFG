@@ -1,6 +1,12 @@
 find a group since roll20s lfg doesn't work for most recent data
 
-example
+to install:
+
+    git clone https://github.com/victusfate/scrapeRoll20LFG.git
+    npm install
+
+
+to run:
 
     messel@messels-MBP:~/Desktop/Dropbox/code/js/scrapeRoll20LFG$ node test.js gurps
     sUrl https://app.roll20.net/forum/category/22
