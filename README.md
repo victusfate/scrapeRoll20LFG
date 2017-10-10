@@ -3,6 +3,7 @@ find a group since roll20s lfg doesn't work for most recent data
 to install:
 
     git clone https://github.com/victusfate/scrapeRoll20LFG.git
+    cd scrapeRoll20LFG
     npm install
 
 
