@@ -3,12 +3,33 @@ const cheerio   = require('cheerio')
 const path      = require('path')
 const execSync  = require('child_process').execSync
 
-const NPages    = 10;
-const aQueries  = []
-for (let i = 2;i < process.argv.length;i++) {
-  aQueries.push(('' + process.argv[i]).toLowerCase())
+const NPages      = 10;
+const aQueries    = [] // OR all these
+
+let i = 2
+
+const recursiveCombine = (aAll) => {
+  if (i < process.argv.length - 1 && process.argv[i+1] === 'AND') {
+    aAll.push(process.argv[i])
+    i += 2
+    return recursiveCombine(aAll)
+  }
+  else if (process.argv[i-1] === 'AND') {
+    aAll.push(process.argv[i])    
+  }
+  return aAll  
+}
+
+for (;i < process.argv.length;i++) {
+  if (i < process.argv.length - 1 && process.argv[i+1] === 'AND') {
+    aQueries.push(recursiveCombine([],i))
+  }
+  else {
+    aQueries.push(('' + process.argv[i]).toLowerCase())
+  }
 }
 console.log('aQueries',aQueries)
+
 const sRoot     = 'https://app.roll20.net'
 const sBaseUrl  = `${sRoot}/forum/category/22`
 
@@ -25,10 +46,18 @@ const go = async () => {
       if (!sData.includes('picto')) {
         let bMatch = false
         for (let i in aQueries) {
-          let sQuery = aQueries[i]
-          if (sLC.includes(sQuery)) {
-            bMatch = true
-            break
+          let val = aQueries[i]
+          if (typeof val === 'string') {
+            if (sLC.includes(val)) {
+              bMatch = true
+              break
+            }
+          }
+          else if (Array.isArray(val) && val.length > 0) {
+            if (val.every( (element) => sLC.includes(element) )) {
+              bMatch = true
+              break
+            }
           }
         }
         if (bMatch) {

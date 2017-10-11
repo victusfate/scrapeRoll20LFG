@@ -9,7 +9,7 @@ to install:
 
 to run:
 
-    messel@messels-MBP:~/Desktop/Dropbox/code/js/scrapeRoll20LFG$ node test.js rifts starfinder supernatural
+    messel@messels-MBP:~/Desktop/Dropbox/code/js/scrapeRoll20LFG$ node test.js lfp AND rifts lfp AND starfinder lfp AND supernatural 
     aQueries [ 'rifts', 'starfinder', 'supernatural' ]
     sUrl https://app.roll20.net/forum/category/22
     sUrl https://app.roll20.net/forum/category/22?p=1
