@@ -6,6 +6,8 @@ const execSync  = require('child_process').execSync
 const NPages      = 10;
 const aQueries    = [] // OR all these
 
+const bSkipPaid   = true // set this to false to look for paid and free games
+
 let i = 2
 
 const recursiveCombine = (aAll) => {
@@ -48,13 +50,13 @@ const go = async () => {
         for (let i in aQueries) {
           let val = aQueries[i]
           if (typeof val === 'string') {
-            if (sLC.includes(val)) {
+            if (sLC.includes(val) && (!bSkipPaid || !sLC.includes('paid')) ) {
               bMatch = true
               break
             }
           }
           else if (Array.isArray(val) && val.length > 0) {
-            if (val.every( (element) => sLC.includes(element) )) {
+            if (val.every( (element) => sLC.includes(element) ) && (!bSkipPaid || !sLC.includes('paid')) ) {
               bMatch = true
               break
             }
