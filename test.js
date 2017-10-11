@@ -49,14 +49,15 @@ const go = async () => {
         let bMatch = false
         for (let i in aQueries) {
           let val = aQueries[i]
+          const bFree2Play = !bSkipPaid || (!sLC.includes('paid') && !sLC.includes('p2p'))
           if (typeof val === 'string') {
-            if (sLC.includes(val) && (!bSkipPaid || !sLC.includes('paid')) ) {
+            if (sLC.includes(val) && bFree2Play) {
               bMatch = true
               break
             }
           }
           else if (Array.isArray(val) && val.length > 0) {
-            if (val.every( (element) => sLC.includes(element) ) && (!bSkipPaid || !sLC.includes('paid')) ) {
+            if (val.every( (element) => sLC.includes(element) ) && bFree2Play) {
               bMatch = true
               break
             }
@@ -111,11 +112,7 @@ go().then( res => {
       if (aData.length > 0) {
         console.log(aData)
         aData.map( oData => {
-          execSync(`open ${oData.relUrl}`, (err,stdout,stderr) => {
-            if (err) {
-              throw err
-            }
-          })
+          execSync(`open ${oData.relUrl}`)
         })
       }
     })
