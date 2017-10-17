@@ -2,14 +2,19 @@ find a group since roll20s lfg doesn't work for most recent data
 
 to install:
 
+    npm install -g lfg
+
+    or
+    
     git clone https://github.com/victusfate/scrapeRoll20LFG.git
     cd scrapeRoll20LFG
-    npm install
+    npm install -g .
+
 
 
 to run:
 
-    messel@messels-MBP:~/Desktop/Dropbox/code/js/scrapeRoll20LFG$ node test.js lfp AND rifts lfp AND starfinder lfp AND supernatural 
+    messel@messels-MBP:~/Desktop/Dropbox/code/js/scrapeRoll20LFG$ lfg lfp AND rifts lfp AND starfinder lfp AND supernatural 
     aQueries [ 'rifts', 'starfinder', 'supernatural' ]
     sUrl https://app.roll20.net/forum/category/22
     sUrl https://app.roll20.net/forum/category/22?p=1

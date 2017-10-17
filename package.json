@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "scrape roll20 lfg",
   "main": "test.js",
+  "bin": {
+    "lfg": "./bin/lfg"
+  },  
   "dependencies": {
     "cheerio": "^1.0.0-rc.2",
     "request": "^2.83.0",
