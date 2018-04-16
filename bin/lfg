@@ -1,0 +1,141 @@
+#!/usr/bin/env node
+
+const args       = process.argv.splice(2)
+
+if (args.length < 1) {
+  console.log('arguments',arguments)
+  console.log(`usage: lfg lfp AND 'D&D' lfp AND rifts lfp AND starfinder lfp AND supernatural`);
+  process.exit(1);
+}
+
+const rp        = require('request-promise')
+const cheerio   = require('cheerio')
+const path      = require('path')
+const execSync  = require('child_process').execSync
+
+const NPages      = 10;
+const aQueries    = [] // OR all these
+
+const bSkipPaid   = true // set this to false to look for paid and free games
+
+let i = 0
+
+const recursiveCombine = (aAll) => {
+  if (i < args.length - 1 && args[i+1] === 'AND') {
+    aAll.push(args[i])
+    i += 2
+    return recursiveCombine(aAll)
+  }
+  else if (args[i-1] === 'AND') {
+    aAll.push(args[i])    
+  }
+  return aAll  
+}
+
+for (;i < args.length;i++) {
+  if (i < args.length - 1 && args[i+1] === 'AND') {
+    aQueries.push(recursiveCombine([],i))
+  }
+  else {
+    aQueries.push(('' + args[i]).toLowerCase())
+  }
+}
+console.log('aQueries',aQueries)
+
+const sRoot     = 'https://app.roll20.net'
+const sBaseUrl  = `${sRoot}/forum/category/22`
+
+const go = async () => {
+
+  const getPostTitles = (html) => {
+    const $     = cheerio.load(html)    
+    let aData   = []
+    $('.title').each( function(i,oTest) {
+      const sHref = $(this).children().first().attr('href')
+      const sText = $(this).children().first().text()
+      const sLC   = sText.toLowerCase()
+      const sData = $(this).html()
+      if (!sData.includes('picto')) {
+        let bMatch = false
+        for (let i in aQueries) {
+          let val = aQueries[i]
+          const bFree2Play = !bSkipPaid || (!sLC.includes('paid') && !sLC.includes('p2p'))
+          if (typeof val === 'string') {
+            if (sLC.includes(val) && bFree2Play) {
+              bMatch = true
+              break
+            }
+          }
+          else if (Array.isArray(val) && val.length > 0) {
+            if (val.every( (element) => sLC.includes(element) ) && bFree2Play) {
+              bMatch = true
+              break
+            }
+          }
+        }
+        if (bMatch) {
+          aData.push({ relUrl: path.join(sRoot,sHref), sText: sText })
+        }
+      }
+    })
+    console.log({ aData: aData })
+    return aData
+  }
+
+  const getData = async () => {
+    let aPromises = []
+    if (aQueries.length > 0) {
+      for (let i = 0;i < NPages;i++) {
+        let sUrl = sBaseUrl
+        if (i > 0) {
+          sUrl = `${sUrl}?p=${i}`
+        }
+        console.log('sUrl',sUrl)
+        aPromises.push(rp(sUrl))
+      }    
+    }
+    else {
+      return Promise.reject(Error(`aQueries empty, pass in a game/pattern to find ${JSON.stringify(aQueries)}`))
+    }
+    return Promise.all(aPromises)
+  }
+  const getStub = () => {
+    return [require('fs').readFileSync('./test.html').toString()]
+  }
+
+  const aHtml = await getData()
+  // const aHtml = await getStub() // for testing
+  if (Array.isArray(aHtml)) {
+    return aHtml.map( html => {
+      return getPostTitles(html)
+    })
+  }
+
+  return []
+
+}
+
+go().then( res => {
+  console.log({ action: 'go.success' })
+  if (Array.isArray(res)) {
+    const aAll = res.reduce( (a,b) => a.concat(b), [] )
+    console.log('only opening at most the first 10 matches')
+    aAll.length = 15
+    aAll.map( oData => {
+      let sCommand = `xdg-open ${oData.relUrl}` // default to linux+
+      switch (process.platform) {
+        case 'darwin':
+          sCommand = `open ${oData.relUrl}`
+          break
+        case 'win32':
+          sCommand = `start ${oData.relUrl}`
+          break
+        default:
+      }
+      execSync(sCommand)
+    })
+  }
+})
+.catch(err => {
+  console.error({ action: 'go.err', err:err })
+})
