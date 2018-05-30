@@ -61,13 +61,16 @@ const go = async () => {
           let val = aQueries[i]
           const bFree2Play = !bSkipPaid || (!sLC.includes('paid') && !sLC.includes('p2p'))
           if (typeof val === 'string') {
-            if (sLC.includes(val) && bFree2Play) {
+            if (sLC.includes(val.toLowerCase()) && bFree2Play) {
               bMatch = true
               break
             }
           }
           else if (Array.isArray(val) && val.length > 0) {
-            if (val.every( (element) => sLC.includes(element) ) && bFree2Play) {
+            bElementMatch = val.every( (element) => {
+              return typeof element === 'string' && sLC.includes(element.toLowerCase()) 
+            })
+            if (bElementMatch && bFree2Play) {
               bMatch = true
               break
             }
