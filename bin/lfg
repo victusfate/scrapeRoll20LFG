@@ -8,7 +8,7 @@ if (args.length < 1) {
   process.exit(1);
 }
 
-const rp        = require('request-promise')
+const fetch     = require('node-fetch')
 const cheerio   = require('cheerio')
 const path      = require('path')
 const execSync  = require('child_process').execSync
@@ -94,7 +94,7 @@ const go = async () => {
           sUrl = `${sUrl}?p=${i}`
         }
         console.log('sUrl',sUrl)
-        aPromises.push(rp(sUrl))
+        aPromises.push(fetch(sUrl).then(res => res.text()))
       }    
     }
     else {
@@ -121,6 +121,7 @@ const go = async () => {
 go().then( res => {
   console.log({ action: 'go.success' })
   if (Array.isArray(res)) {
+    console.log('res',res)
     const aAll = res.reduce( (a,b) => a.concat(b), [] )
     console.log('only opening at most the first 10 matches')
     aAll.length = 15
